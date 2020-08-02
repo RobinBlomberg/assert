@@ -1,6 +1,6 @@
 {
-  "name": "assert",
-  "version": "0.1.0",
+  "name": "@kjou/assert",
+  "version": "0.1.1",
   "author": "Robin Blomberg",
   "scripts": {
     "test": "node ./test"
