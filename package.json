@@ -11,5 +11,8 @@
     "url": "git+https://github.com/RobinBlomberg/assert.git"
   },
   "license": "UNLICENSED",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@kjou/error": "github:RobinBlomberg/error#release/0.3.6"
+  }
 }
