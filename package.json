@@ -1,10 +1,10 @@
 {
   "name": "@robinblomberg/assert",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "Robin Blomberg",
   "type": "module",
   "main": "index.js",
-  "types": "index.d.ts",
+  "types": "types.d.ts",
   "dependencies": {
     "@robinblomberg/schema": "^0.1.2"
   },
