@@ -1,34 +1,19 @@
-# Schema
+# Assert
 
 ## Installation
 
 ```
-npm install --save-dev @robinblomberg/schema
+npm install --save-dev @robinblomberg/assert
 ```
 
 ## Usage
 
 ```javascript
-const config = s.object({
-  ignorePatterns: s.array(s.string()),
-  rules: s.object({
-    indent: s.array([
-      s.number(),
-      s.number(),
-      s.object({
-        SwitchCase: s.number()
-      })
-    ])
-  })
-});
+import * as Assert from '@robinblomberg/assert';
 
-config.validate({
-  ignorePatterns: ['**/.*/**'],
-  rules: {
-    indent: [1, 2, {
-      SwitchCase: '1'
-    }]
-  }
-})
-// SchemaValidationError (`Type '"1"' is not assignable to type 'number'.`)
+Assert.equal([3], [4]);
+// Error:
+//
+// Type '[4]' is not assignable to type '[3]'.
+// Type '4' is not assignable to type '3'.
 ```
