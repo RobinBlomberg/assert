@@ -1,81 +1,52 @@
-const ErrorMessages = require('@kjou/error').Messages
-const baseDeepEqual = require('@kjou/utility').deepEqual
+import * as Schema from '@robinblomberg/schema';
 
-const deepEqual = (a, b) => {
-  if (!baseDeepEqual(a, b)) {
-    throw new Error(ErrorMessages.ValuesNotDeepEqual(a, b))
-  }
-}
-
-const doesNotThrow = (fn) => {
+/**
+ * @param {Function} fn
+ * @throws {Error}
+ */
+export const doesNotThrow = (fn) => {
   try {
-    fn()
-  } catch (error) {
-    throw new Error(ErrorMessages.UnexpectedThrow(error))
+    fn();
+  } catch {
+    throw new Error('Function unexpectedly threw an exception.');
   }
-}
+};
 
-const equal = (a, b, noun) => {
-  if (a !== b) {
-    throw new Error(ErrorMessages.ValueMismatch(a, b, noun))
+/**
+ * @param {*} a
+ * @param {*} b
+ */
+export const equal = (a, b) => {
+  const error = Schema.infer(a).validate(b);
+
+  if (error) {
+    throw new Error(`\n\n${error.toString()}\n`);
   }
-}
+};
 
-const fail = (error) => {
-  if (error instanceof Error) {
-    throw error
-  } else {
-    throw new Error(ErrorMessages.AssertionFailed(error))
+/**
+ * @param {*} a
+ * @param {*} b
+ */
+export const notEqual = (a, b) => {
+  const schema = Schema.infer(a);
+  const error = schema.validate(b);
+
+  if (!error) {
+    throw new Error(`\n\nExpected values to not be equal:\n\n${schema.stringify()}\n`);
   }
-}
+};
 
-const notDeepEqual = (a, b) => {
-  if (baseDeepEqual(a, b)) {
-    throw new Error(ErrorMessages.UnexpectedDeepEquality(a))
-  }
-}
-
-const notEqual = (a, b, noun) => {
-  if (a === b) {
-    throw new Error(ErrorMessages.UnexpectedMatch(a, noun))
-  }
-}
-
-const ok = (value, message) => {
-  if (!value) {
-    fail(message)
-  }
-}
-
-const throws = (fn, name, message) => {
+/**
+ * @param {Function} fn
+ * @throws {Error}
+ */
+export const throws = (fn) => {
   try {
-    fn()
-  } catch (error) {
-    if (name && error.name !== name) {
-      throw new Error(
-        ErrorMessages.ValueMismatch(error.name, name, 'error names')
-      )
-    }
-
-    if (message && error.message !== message) {
-      throw new Error(
-        ErrorMessages.ValueMismatch(error.message, message, 'error messages')
-      )
-    }
-
-    return
+    fn();
+  } catch {
+    return;
   }
 
-  throw new Error(ErrorMessages.DidNotThrow())
-}
-
-module.exports = {
-  deepEqual,
-  doesNotThrow,
-  equal,
-  fail,
-  notDeepEqual,
-  notEqual,
-  ok,
-  throws
-}
+  throw new Error('Expected function to throw an exception.');
+};

@@ -1,18 +1,44 @@
 {
-  "name": "@kjou/assert",
-  "version": "0.1.1",
+  "name": "@robinblomberg/assert",
+  "version": "0.2.1",
   "author": "Robin Blomberg",
-  "scripts": {
-    "test": "node ./test"
-  },
+  "type": "module",
   "main": "index.js",
+  "dependencies": {
+    "@robinblomberg/schema": "^0.1.0"
+  },
+  "devDependencies": {
+    "@robinblomberg/eslint-config-robinblomberg": "^0.2.7",
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.14.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.2"
+  },
+  "scripts": {
+    "dev": "nodemon ./index.test.js",
+    "lint": "eslint \"**/*.{js,ts}\"",
+    "lint:fix": "eslint \"**/*.{js,ts}\" --fix",
+    "pre-commit": "concurrently --kill-others-on-fail \"npm run test\" eslint",
+    "test": "node ./index.test.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RobinBlomberg/assert.git"
   },
-  "license": "UNLICENSED",
-  "description": "",
-  "dependencies": {
-    "@kjou/error": "github:RobinBlomberg/error#release/0.3.6"
+  "bugs": {
+    "url": "https://github.com/RobinBlomberg/assert/issues"
+  },
+  "homepage": "https://github.com/RobinBlomberg/assert#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "npm run test",
+      "cross-env CI=true eslint --fix"
+    ]
   }
 }
