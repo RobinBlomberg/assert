@@ -1,14 +1,14 @@
-import * as Assert from './index.js';
+import { doesNotThrow, equal, notEqual, throws } from './src/functions.js';
 
-Assert.doesNotThrow(() => {
-  Assert.equal([3], [3]);
+doesNotThrow(() => {
+  equal([3], [3]);
 });
-Assert.doesNotThrow(() => {
-  Assert.notEqual([3], [4]);
+doesNotThrow(() => {
+  notEqual([3], [4]);
 });
-Assert.throws(() => {
-  Assert.equal([3], [4]);
+throws(() => {
+  equal([3], [4]);
 });
-Assert.throws(() => {
-  Assert.notEqual([3], [3]);
+throws(() => {
+  notEqual([3], [3]);
 });
