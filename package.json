@@ -23,14 +23,6 @@
     "pre-commit": "concurrently --kill-others-on-fail \"npm run test\" eslint",
     "test": "node ./index.test.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RobinBlomberg/assert.git"
-  },
-  "bugs": {
-    "url": "https://github.com/RobinBlomberg/assert/issues"
-  },
-  "homepage": "https://github.com/RobinBlomberg/assert#readme",
   "husky": {
     "hooks": {
       "pre-commit": "npm run test && lint-staged"
@@ -38,5 +30,13 @@
   },
   "lint-staged": {
     "*.{js,ts}": "cross-env CI=true eslint --fix"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobinBlomberg/assert.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RobinBlomberg/assert/issues"
+  },
+  "homepage": "https://github.com/RobinBlomberg/assert#readme"
 }
