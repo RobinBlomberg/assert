@@ -1,12 +1,12 @@
 {
   "name": "@robinblomberg/assert",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "author": "Robin Blomberg",
   "type": "module",
   "main": "index.js",
   "types": "types.d.ts",
   "dependencies": {
-    "@robinblomberg/schema": "^0.1.5"
+    "@robinblomberg/schema": "^0.1.8"
   },
   "devDependencies": {
     "@robinblomberg/eslint-config-robinblomberg": "^0.2.12",

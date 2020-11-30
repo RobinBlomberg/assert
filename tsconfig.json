@@ -8,6 +8,7 @@
     "moduleResolution": "Node",
     "noEmit": true,
     "pretty": true,
+    "skipLibCheck": true,
     "strict": true,
     "target": "ESNext"
   }
