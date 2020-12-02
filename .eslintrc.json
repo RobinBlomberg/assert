@@ -1,3 +1,6 @@
 {
-  "extends": "@robinblomberg/robinblomberg"
+  "extends": "@robinblomberg/robinblomberg",
+  "ignorePatterns": [
+    "dist"
+  ]
 }
