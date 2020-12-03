@@ -6,7 +6,7 @@
   "main": "index.js",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@robinblomberg/schema": "^0.2.0"
+    "@robinblomberg/schema": "^0.2.1"
   },
   "devDependencies": {
     "@robinblomberg/eslint-config-robinblomberg": "^0.2.16",
