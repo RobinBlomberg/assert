@@ -1,15 +1,15 @@
 {
   "name": "@robinblomberg/assert",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "author": "Robin Blomberg",
   "type": "module",
   "main": "index.js",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@robinblomberg/schema": "^0.1.10"
+    "@robinblomberg/schema": "^0.2.0"
   },
   "devDependencies": {
-    "@robinblomberg/eslint-config-robinblomberg": "^0.2.14",
+    "@robinblomberg/eslint-config-robinblomberg": "^0.2.16",
     "concurrently": "^5.3.0",
     "cross-env": "^7.0.3",
     "eslint": "^7.14.0",
