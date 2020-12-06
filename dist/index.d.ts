@@ -1,1 +1,1 @@
-export { doesNotThrow, equal, notEqual, throws } from "./src/index.js";
+export { doesNotThrow, equal, notEqual, throws } from "./lib/index.js";

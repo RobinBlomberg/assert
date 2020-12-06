@@ -1,4 +1,4 @@
-import { doesNotThrow, equal, notEqual, throws } from './src/index.js';
+import { doesNotThrow, equal, notEqual, throws } from './lib/index.js';
 
 doesNotThrow(() => {
   equal([3], [3]);
