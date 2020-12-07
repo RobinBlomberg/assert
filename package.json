@@ -1,16 +1,16 @@
 {
   "name": "@robinblomberg/assert",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "author": "Robin Blomberg",
   "type": "module",
   "main": "lib/index.js",
   "types": "main.d.ts",
   "dependencies": {
-    "@robinblomberg/schema": "^0.2.2"
+    "@robinblomberg/schema": "^0.2.3"
   },
   "devDependencies": {
     "@robinblomberg/eslint-config-robinblomberg": "^0.2.22",
-    "@robinblomberg/test": "^0.5.9",
+    "@robinblomberg/test": "^0.5.10",
     "concurrently": "^5.3.0",
     "cross-env": "^7.0.3",
     "eslint": "^7.15.0",
@@ -26,7 +26,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test && npm run check && npm run lint:fix"
+      "pre-commit": "npm run test && npm run check && lint-staged"
     }
   },
   "lint-staged": {
