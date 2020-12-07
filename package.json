@@ -1,6 +1,6 @@
 {
   "name": "@robinblomberg/assert",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "author": "Robin Blomberg",
   "type": "module",
   "main": "lib/index.js",
@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@robinblomberg/eslint-config-robinblomberg": "^0.2.20",
-    "@robinblomberg/test": "^0.5.7",
+    "@robinblomberg/test": "^0.5.9",
     "concurrently": "^5.3.0",
     "cross-env": "^7.0.3",
     "eslint": "^7.15.0",

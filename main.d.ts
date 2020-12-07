@@ -1,7 +1,12 @@
-export function doesNotThrow(fn: Function): void;
+/*
+ * External types
+ * -------------------------------------------------------------------------------------------------
+ */
 
-export function equal(a: any, b: any): void;
+export const doesNotThrow: (fn: Function) => void;
 
-export function notEqual(a: any, b: any): void;
+export const equal: (a: any, b: any) => void;
 
-export function throws(fn: Function): void;
+export const notEqual: (a: any, b: any) => void;
+
+export const throws: (fn: Function) => void;
